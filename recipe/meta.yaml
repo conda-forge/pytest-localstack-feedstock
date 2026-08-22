@@ -1,17 +1,17 @@
 {% set name = "pytest-localstack" %}
-{% set version = "0.4.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 91be109a98f3737e10b0b1de8f0cf48f30abee878a77099862fad2bed6de689c
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6926d1587bf05d3e889f8989b299d11bf7f93ce6678f9d13918c4f4c64ffb057
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
